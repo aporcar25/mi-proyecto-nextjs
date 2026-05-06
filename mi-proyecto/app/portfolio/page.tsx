@@ -59,6 +59,52 @@ export default function Portfolio() {
           </div>
         </div>
         
+        {/* Project 3 */}
+        <div className="group relative rounded-[2.5rem] overflow-hidden bg-[#111] border border-gray-800/80 cursor-pointer h-[500px]">
+          <div className="absolute inset-0 bg-gray-800 relative h-full w-full overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 to-gray-900 group-hover:scale-105 transition-transform duration-700"></div>
+            <div className="absolute inset-6 rounded-3xl border border-gray-700/50 bg-black/40 backdrop-blur-sm flex items-center justify-center overflow-hidden">
+               <div className="w-full h-full bg-gradient-to-tr from-emerald-500/20 to-transparent"></div>
+               <div className="absolute w-3/4 h-3/4 bg-gradient-to-t from-white/5 to-transparent rounded-2xl border border-white/10 shadow-2xl backdrop-blur-md"></div>
+            </div>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+          
+          <div className="absolute bottom-0 left-0 w-full p-10 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+            <div className="flex gap-3 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+              <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full bg-lime-400/20 text-lime-300 border border-lime-400/30">Node.js</span>
+              <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full bg-white/10 text-white border border-white/10">PostgreSQL</span>
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-3 group-hover:text-lime-400 transition-colors">E-commerce API</h3>
+            <p className="text-gray-300 text-base line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
+              Arquitectura Headless para comercio electrónico con procesamiento de pagos en tiempo real y gestión de inventario.
+            </p>
+          </div>
+        </div>
+
+        {/* Project 4 */}
+        <div className="group relative rounded-[2.5rem] overflow-hidden bg-[#111] border border-gray-800/80 cursor-pointer h-[500px]">
+          <div className="absolute inset-0 bg-gray-800 relative h-full w-full overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-900 to-gray-900 group-hover:scale-105 transition-transform duration-700"></div>
+            <div className="absolute inset-6 rounded-3xl border border-gray-700/50 bg-black/40 backdrop-blur-sm flex items-center justify-center overflow-hidden">
+               <div className="w-full h-full bg-gradient-to-bl from-purple-500/20 to-transparent"></div>
+               <div className="absolute w-[80%] h-[40%] bg-gradient-to-b from-white/10 to-transparent rounded-[2rem] border border-white/10 shadow-2xl backdrop-blur-md"></div>
+            </div>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90"></div>
+          
+          <div className="absolute bottom-0 left-0 w-full p-10 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+            <div className="flex gap-3 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+              <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full bg-lime-400/20 text-lime-300 border border-lime-400/30">React</span>
+              <span className="px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full bg-white/10 text-white border border-white/10">TypeScript</span>
+            </div>
+            <h3 className="text-3xl font-bold text-white mb-3 group-hover:text-lime-400 transition-colors">Dashboard de Gestión</h3>
+            <p className="text-gray-300 text-base line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
+              Panel de control administrativo con analíticas complejas, exportación de reportes y roles de usuario avanzados.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   );
