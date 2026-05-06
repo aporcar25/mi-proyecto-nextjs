@@ -12,20 +12,20 @@ export default function Contact() {
 
         <form className="flex flex-col gap-6">
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 mb-4">
               <label htmlFor="name" className="text-sm font-medium text-gray-400">Nombre</label>
-              <input type="text" id="name" placeholder="Tu nombre" className="bg-[#1a1a1a] border border-gray-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-lime-400 transition-colors" />
+              <input type="text" id="name" placeholder="Tu nombre" className="bg-[#1a1a1a] border border-gray-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-lime-400 transition-colors mb-4" />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 mb-4">
               <label htmlFor="email" className="text-sm font-medium text-gray-400">Email</label>
-              <input type="email" id="email" placeholder="tu@email.com" className="bg-[#1a1a1a] border border-gray-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-lime-400 transition-colors" />
+              <input type="email" id="email" placeholder="tu@email.com" className="bg-[#1a1a1a] border border-gray-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-lime-400 transition-colors mb-4" />
             </div>
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="message" className="text-sm font-medium text-gray-400">Mensaje</label>
             <textarea id="message" rows={5} placeholder="Cuéntame sobre tu proyecto..." className="bg-[#1a1a1a] border border-gray-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-lime-400 transition-colors resize-none"></textarea>
           </div>
-          <button type="button" className="mt-4 px-10 py-5 rounded-full bg-lime-400 text-black font-bold text-lg hover:bg-lime-500 transition-all duration-300 shadow-[0_0_20px_rgba(163,230,53,0.3)] hover:shadow-[0_0_30px_rgba(163,230,53,0.5)] self-start">
+          <button type="button" className="mt-14 px-10 py-5 rounded-full bg-lime-400 text-black font-bold text-lg hover:bg-lime-500 transition-all duration-300 shadow-[0_0_20px_rgba(163,230,53,0.3)] hover:shadow-[0_0_30px_rgba(163,230,53,0.5)] self-start">
             Enviar Mensaje
           </button>
         </form>

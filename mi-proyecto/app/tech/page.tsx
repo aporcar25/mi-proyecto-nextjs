@@ -20,8 +20,8 @@ export default function Tech() {
         <Link href="/tech/nextjs" className="relative group block outline-none">
           <div className="absolute -inset-0.5 rounded-[1.5rem] bg-gradient-to-r from-white/60 to-gray-400/60 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500"></div>
           <div className="relative h-full rounded-[1.4rem] bg-[#0a0a0a] border border-gray-800 p-8 flex flex-col items-center text-center transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-[1.02]">
-            <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-black mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <NextJsIcon className="w-10 h-10" />
+            <div className="w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <NextJsIcon className="w-12 h-12 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-lime-400 transition-colors">Next.js</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -62,8 +62,8 @@ export default function Tech() {
         <Link href="/tech/nodejs" className="relative group block outline-none">
           <div className="absolute -inset-0.5 rounded-[1.5rem] bg-gradient-to-r from-[#43853d]/60 to-[#43853d]/30 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500"></div>
           <div className="relative h-full rounded-[1.4rem] bg-[#0a0a0a] border border-gray-800 p-8 flex flex-col items-center text-center transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-[1.02]">
-            <div className="w-16 h-16 bg-[#43853d]/10 border border-[#43853d]/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <NodeJsIcon className="w-10 h-10" />
+            <div className="w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <NodeJsIcon className="w-12 h-12" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-lime-400 transition-colors">Node.js</h3>
             <p className="text-gray-400 text-sm leading-relaxed">

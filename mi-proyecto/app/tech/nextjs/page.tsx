@@ -13,8 +13,8 @@ export default function NextJsPage() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 blur-[100px] -z-10 rounded-full"></div>
         
         <div className="flex items-center gap-6 mb-10">
-          <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center text-black shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-            <NextJsIcon className="w-12 h-12" />
+          <div className="w-20 h-20 flex items-center justify-center">
+            <NextJsIcon className="w-16 h-16 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight">Next.js</h1>
         </div>
