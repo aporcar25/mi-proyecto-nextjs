@@ -1,8 +1,40 @@
+'use client';
+import { useState } from 'react';
+
 export default function Contact() {
+  const [formData, setFormData] = useState({ nombre: '', email: '', mensaje: '' });
+  const [estado, setEstado] = useState('idle'); // idle | loading | success | error
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async () => {
+    if (!formData.nombre || !formData.email || !formData.mensaje) {
+      setEstado('error');
+      return;
+    }
+    setEstado('loading');
+    try {
+      const res = await fetch('http://192.168.56.1:3001/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      if (res.ok) {
+        setEstado('success');
+        setFormData({ nombre: '', email: '', mensaje: '' });
+      } else {
+        setEstado('error');
+      }
+    } catch {
+      setEstado('error');
+    }
+  };
+
   return (
     <div className="w-full max-w-4xl mx-auto py-20 px-6">
       <div className="bg-gradient-to-br from-[#111] to-[#0a0a0a] border border-gray-800 rounded-[3rem] p-10 md:p-16 relative overflow-hidden">
-        {/* Glow behind contact */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-lime-500/10 blur-[100px] -z-10 rounded-full"></div>
         
         <h1 className="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">Hablemos</h1>
@@ -10,25 +42,59 @@ export default function Contact() {
           ¿Tienes un proyecto en mente? Rellena el formulario y me pondré en contacto contigo lo antes posible.
         </p>
 
-        <form className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2 mb-4">
-              <label htmlFor="name" className="text-sm font-medium text-gray-400">Nombre</label>
-              <input type="text" id="name" placeholder="Tu nombre" className="bg-[#1a1a1a] border border-gray-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-lime-400 transition-colors mb-4" />
+              <label className="text-sm font-medium text-gray-400">Nombre</label>
+              <input
+                type="text"
+                name="nombre"
+                value={formData.nombre}
+                onChange={handleChange}
+                placeholder="Tu nombre"
+                className="bg-[#1a1a1a] border border-gray-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-lime-400 transition-colors mb-4"
+              />
             </div>
             <div className="flex flex-col gap-2 mb-4">
-              <label htmlFor="email" className="text-sm font-medium text-gray-400">Email</label>
-              <input type="email" id="email" placeholder="tu@email.com" className="bg-[#1a1a1a] border border-gray-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-lime-400 transition-colors mb-4" />
+              <label className="text-sm font-medium text-gray-400">Email</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="tu@email.com"
+                className="bg-[#1a1a1a] border border-gray-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-lime-400 transition-colors mb-4"
+              />
             </div>
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="message" className="text-sm font-medium text-gray-400">Mensaje</label>
-            <textarea id="message" rows={5} placeholder="Cuéntame sobre tu proyecto..." className="bg-[#1a1a1a] border border-gray-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-lime-400 transition-colors resize-none"></textarea>
+            <label className="text-sm font-medium text-gray-400">Mensaje</label>
+            <textarea
+              name="mensaje"
+              value={formData.mensaje}
+              onChange={handleChange}
+              rows={5}
+              placeholder="Cuéntame sobre tu proyecto..."
+              className="bg-[#1a1a1a] border border-gray-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-lime-400 transition-colors resize-none"
+            />
           </div>
-          <button type="button" className="mt-14 px-10 py-5 rounded-full bg-lime-400 text-black font-bold text-lg hover:bg-lime-500 transition-all duration-300 shadow-[0_0_20px_rgba(163,230,53,0.3)] hover:shadow-[0_0_30px_rgba(163,230,53,0.5)] self-start">
-            Enviar Mensaje
+
+          {/* Mensajes de estado */}
+          {estado === 'success' && (
+            <p className="text-lime-400 font-medium">¡Mensaje enviado correctamente! Me pondré en contacto contigo pronto.</p>
+          )}
+          {estado === 'error' && (
+            <p className="text-red-400 font-medium">Hubo un error al enviar. Revisa los campos e inténtalo de nuevo.</p>
+          )}
+
+          <button
+            onClick={handleSubmit}
+            disabled={estado === 'loading'}
+            className="mt-14 px-10 py-5 rounded-full bg-lime-400 text-black font-bold text-lg hover:bg-lime-500 transition-all duration-300 shadow-[0_0_20px_rgba(163,230,53,0.3)] hover:shadow-[0_0_30px_rgba(163,230,53,0.5)] self-start disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {estado === 'loading' ? 'Enviando...' : 'Enviar Mensaje'}
           </button>
-        </form>
+        </div>
 
         <div className="mt-16 pt-10 border-t border-gray-800 flex flex-col md:flex-row gap-6 justify-between items-center">
           <p className="text-gray-400">O encuéntrame en mis redes:</p>
