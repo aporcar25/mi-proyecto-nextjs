@@ -9,7 +9,9 @@ const app = express();
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: '*'
+}));
 app.use(express.json());
 
 // Conexión a MongoDB
