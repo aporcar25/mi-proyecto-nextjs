@@ -16,7 +16,7 @@ export default function Contact() {
     }
     setEstado('loading');
     try {
-      const res = await fetch('http://192.168.56.1:3001/api/contact', {
+      const res = await fetch('http://backend-portfolio-elem.onrender.com/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
