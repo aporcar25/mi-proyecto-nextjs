@@ -1,51 +1,114 @@
-# 🚀 Mi Primer Proyecto Next.js
+# Antonio José — Portfolio Full-Stack
 
-## 📖 Descripción
+Portfolio personal desarrollado con Next.js. Incluye un formulario de contacto completamente funcional conectado a una API backend real, base de datos MongoDB y notificaciones por email mediante Resend.
 
-Este es un proyecto educativo enfocado en aprender y dominar el ecosistema moderno de JavaScript. A través de este portafolio, exploro y aplico las mejores prácticas en el desarrollo Full Stack utilizando tecnologías de vanguardia como **Next.js**, **React** y **Node.js**.
+🌐 **Web:** [proyecto-nextjs-antonio.netlify.app](https://proyecto-nextjs-antonio.netlify.app/)
 
-## 🛠 Tecnologías
+---
 
-El proyecto ha sido construido utilizando las siguientes herramientas:
+## 🛠 Tecnologías utilizadas
 
-- **Next.js (App Router)**: Framework de React para producción con el nuevo paradigma de enrutamiento, Server Components, SSR y SSG.
-- **React**: Librería principal para la creación de interfaces de usuario interactivas y modulares.
-- **Tailwind CSS**: Framework de utilidades CSS para un estilizado ágil, logrando diseños responsivos con una estética *Dark Premium* muy pulida.
-- **Git**: Sistema de control de versiones para gestionar el historial de código de forma robusta.
+### Frontend
+![Next.js](https://img.shields.io/badge/Next.js-000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-## 📂 Estructura del Proyecto
+### Backend
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Resend](https://img.shields.io/badge/Resend-000000?style=for-the-badge&logo=mail.ru&logoColor=white)
 
-Esta aplicación está diseñada como una web multipágina altamente interactiva, estructurada en las siguientes secciones:
+### Despliegue
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
+![MongoDB Atlas](https://img.shields.io/badge/MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 
-- **Inicio (`/`)**: Página principal (Hero) minimalista para la presentación personal.
-- **Portfolio (`/portfolio`)**: Galería de proyectos ("E-commerce API", "Dashboard de Gestión", etc.) con tarjetas interactivas, animaciones y efectos *glow*.
-- **Tecnologías (`/tech`)**: Catálogo interactivo de habilidades. Cada tarjeta de tecnología redirige a subpáginas específicas (ej. `/tech/nextjs`, `/tech/react`) con análisis técnicos detallados.
-- **Contacto (`/contact`)**: Formulario moderno de contacto y enlaces a perfiles sociales (GitHub, LinkedIn, Twitter).
+---
 
-## ⚙️ Instrucciones de Instalación
+## 📁 Estructura del proyecto
 
-Si deseas correr y probar este proyecto de manera local, sigue estos sencillos pasos:
+```
+frontend/          → Aplicación Next.js (desplegada en Netlify)
+├── app/
+│   ├── page.js        → Página principal / Hero
+│   ├── portfolio/     → Sección de proyectos
+│   ├── tech/          → Sección de tecnologías
+│   └── contact/       → Formulario de contacto
+└── components/        → Componentes reutilizables
 
-1. **Clonar el repositorio**:
-   ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   cd mi-proyecto
-   ```
+backend/           → API Node.js + Express (desplegada en Render)
+├── server.js          → Punto de entrada del servidor
+├── routes/            → Rutas de la API
+├── models/            → Esquemas de Mongoose
+└── .env               → Variables de entorno (no se sube)
+```
 
-2. **Instalar las dependencias**:
-   ```bash
-   npm install
-   ```
+---
 
-3. **Iniciar el servidor local**:
-   ```bash
-   npm run dev
-   ```
-   *Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación en acción.*
+## ⚙️ Funcionalidades
 
-## 🧠 Metodología de Trabajo
+- Diseño responsive — funciona en móvil y escritorio
+- Sección portfolio con proyectos reales
+- Showcase de tecnologías
+- Formulario de contacto con validación en tiempo real
+- Notificaciones por email mediante Resend al recibir un mensaje
+- Mensajes guardados en MongoDB Atlas
+- Manejo de errores amigable para el usuario
 
-Durante el desarrollo de esta web se ha seguido una metodología de **Vibe Coding** utilizando asistencia por inteligencia artificial avanzada (**Antigravity**). 
+---
 
-Además, para el control de versiones se ha adoptado un flujo de trabajo estructurado en **Git basado en ramas (Feature Branches)**, garantizando que cada nueva característica o corrección se implemente de manera aislada antes de integrarse al proyecto principal.
+## 🚀 Instalación — Frontend
 
+```bash
+git clone https://github.com/aporcar25/mi-proyecto-nextjs.git
+cd mi-proyecto-nextjs
+npm install
+npm run dev
+```
+
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+
+---
+
+## 🚀 Instalación — Backend
+
+```bash
+cd backend
+npm install
+```
+
+Crea un archivo `.env` con las siguientes variables:
+
+```env
+MONGODB_URI=tu_cadena_de_conexion_mongodb_atlas
+RESEND_API_KEY=tu_clave_api_resend
+PORT=5000
+```
+
+```bash
+npm start
+```
+
+---
+
+## 🌍 Despliegue
+
+| Capa | Plataforma | URL |
+|------|------------|-----|
+| Frontend | Netlify | [proyecto-nextjs-antonio.netlify.app](https://proyecto-nextjs-antonio.netlify.app/) |
+| Backend API | Render | [backend-portfolio-elem.onrender.com](https://backend-portfolio-elem.onrender.com) |
+| Base de datos | MongoDB Atlas | Cloud |
+
+---
+
+## 📬 Contacto
+
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:aporcar2505@g.educaand.es)
+
+---
+
+## 📌 Estado
+
+✅ Completado — Desplegado y completamente funcional.
